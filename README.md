@@ -3,5 +3,5 @@
 connect to server: ssh <username>@noether.csse.rose-hulman.edu
 command to run
 ```
-nohup bash run_slim.sh > output.txt
+nohup bash run_slim.sh > output.txt &
 ```
