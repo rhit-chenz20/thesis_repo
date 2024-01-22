@@ -1,853 +1,253 @@
 // Initial random seed:
-791018212719940016
+1101524721012712750
 
 // Initial random seed:
-3702026002831511994
+5611369690897043400
 
 // Initial random seed:
-8769226774120055564
+2665497633827052004
 
 // Initial random seed:
-7385340683315417654
+7494263633845433351
 
 // Initial random seed:
-3715348578895565246
+1182149241913222123
 
 // Initial random seed:
-414878716243008073
-
-// Initial random seed:
-5533498294228314430
-
-// RunInitializeCallbacks():
-// Initial random seed:
-2679035802461293873
-
-// RunInitializeCallbacks():
-// Initial random seed:
-5435985969687918013
-
-// Initial random seed:
-2136130481460811271
-
-// RunInitializeCallbacks():
-// Initial random seed:
-6524033022295088961
-
-// Initial random seed:
-7707909878522266004
-
-// Initial random seed:
-765232812005999607
-
-// Initial random seed:
-369312753430546547
+6283540003561940554
 
 // RunInitializeCallbacks():
 // RunInitializeCallbacks():
 // RunInitializeCallbacks():
 // RunInitializeCallbacks():
-// Initial random seed:
-8193343663185790527
-
 // RunInitializeCallbacks():
 // RunInitializeCallbacks():
-// Initial random seed:
-63936384765450898
-
-// RunInitializeCallbacks():
-// RunInitializeCallbacks():
-// RunInitializeCallbacks():
-// Initial random seed:
-4506381447663378324
-
-filename suffix data_set/10_Ness_
+filename suffix csv_result/data_set/basic_3_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/basic_6_
+initializeMutationRate(1e-07);
+initializeMutationType(1, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/basic_2_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/basic_1_
 initializeMutationRate(1e-07);
 initializeMutationType(1, 0.5, "n", 5, 1);
 initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-filename suffix data_set/9_Ness_
-initializeMutationRate(1e-07);
 initializeMutationType(1, 0.5, "n", 5, 1);
-filename suffix data_set/1_Ness_
+filename suffix csv_result/data_set/basic_5_
 initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/basic_4_
+initializeMutationRate(1e-07);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
 initializeMutationType(1, 0.5, "n", 5, 1);
 initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
 initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
 initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(7, 0.5, "f", 0);
 initializeMutationType(6, 0.5, "n", 5, 1);
 initializeMutationType(7, 0.5, "f", 0);
 initializeGenomicElementType(1, m7, 1);
 initializeGenomicElementType(2, m1, 1);
 initializeGenomicElementType(3, m2, 1);
 initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(1, m7, 1);
 initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(7, m6, 1);
-// RunInitializeCallbacks():
-filename suffix data_set/17_Ness_
-initializeMutationRate(1e-07);
-filename suffix data_set/8_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
 initializeMutationType(4, 0.5, "n", 5, 1);
 initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
 initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(1, m7, 1);
 initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
 initializeGenomicElementType(3, m2, 1);
 initializeGenomicElementType(4, m3, 1);
-filename suffix data_set/6_Ness_
-initializeMutationRate(1e-07);
-// RunInitializeCallbacks():
-filename suffix data_set/5_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-filename suffix data_set/19_Ness_
-initializeMutationRate(1e-07);
-// RunInitializeCallbacks():
-// RunInitializeCallbacks():
-filename suffix data_set/11_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-filename suffix data_set/2_Ness_
-initializeMutationRate(1e-07);
 initializeGenomicElementType(5, m4, 1);
-// RunInitializeCallbacks():
 initializeGenomicElementType(6, m5, 1);
 initializeGenomicElementType(7, m6, 1);
+initializeMutationType(7, 0.5, "f", 0);
 initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(2, m1, 1);
 initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 0, 999);
 initializeGenomicElement(g1, 1501, 2500);
-initializeMutationType(2, 0.5, "n", 5, 1);
-filename suffix data_set/13_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(6, 0.5, "n", 5, 1);
-filename suffix data_set/4_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-filename suffix data_set/14_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(2, 0.5, "n", 5, 1);
-filename suffix data_set/18_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-filename suffix data_set/3_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(5, 0.5, "n", 5, 1);
-filename suffix data_set/16_Ness_
-initializeMutationRate(1e-07);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeGenomicElementType(2, m1, 1);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElementType(4, m3, 1);
 initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElementType(3, m2, 1);
-// Initial random seed:
-6009680306898241267
-
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(7, 0.5, "f", 0);
-// RunInitializeCallbacks():
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 0, 999);
-filename suffix data_set/7_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElement(g1, 1501, 2500);
-filename suffix data_set/12_Ness_
-initializeMutationRate(1e-07);
 initializeGenomicElement(g2, 1000, 1500);
-initializeMutationType(2, 0.5, "n", 5, 1);
+initializeGenomicElementType(5, m4, 1);
 initializeGenomicElement(g1, 1501, 2500);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g3, 3501, 4001);
 initializeGenomicElement(g1, 4002, 5001);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 2501, 3500);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 2501, 3500);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElement(g1, 5002, 6001);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
 initializeGenomicElementType(5, m4, 1);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 0, 999);
 initializeGenomicElementType(6, m5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 5002, 6001);
 initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 1501, 2500);
 initializeGenomicElement(g4, 6002, 6502);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(7, 0.5, "f", 0);
-// Initial random seed:
-3926202315830375328
-
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElement(g1, 6503, 7502);
-// RunInitializeCallbacks():
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 4002, 5001);
 initializeGenomicElement(g3, 3501, 4001);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-filename suffix data_set/15_Ness_
-initializeMutationRate(1e-07);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(7, 0.5, "f", 0);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(6, m5, 1);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(1, m7, 1);
+initializeGenomicElement(g1, 6503, 7502);
 initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 4002, 5001);
 initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElementType(3, m2, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(3, m2, 1);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 0, 999);
 initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElementType(3, m2, 1);
 initializeGenomicElement(g1, 5002, 6001);
-initializeMutationType(5, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(3, m2, 1);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g3, 3501, 4001);
-// Initial random seed:
-7829407997930414300
-
-initializeGenomicElement(g1, 4002, 5001);
 initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g4, 6002, 6502);
-// RunInitializeCallbacks():
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 4002, 5001);
-filename suffix data_set/20_Ness_
-initializeMutationRate(1e-07);
 initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 6503, 7502);
 initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g2, 1000, 1500);
 initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeMutationType(7, 0.5, "f", 0);
 initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g5, 8503, 9003);
 initializeGenomicElement(g5, 8503, 9003);
 initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElementType(3, m2, 1);
 initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 2501, 3500);
-initializeMutationType(1, 0.5, "n", 5, 1);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElementType(3, m2, 1);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElementType(4, m3, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 0, 999);
 initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElementType(4, m3, 1);
+initializeGenomicElement(g1, 7503, 8502);
 initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 10004, 11003);
 initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElementType(7, m6, 1);
 initializeGenomicElement(g7, 13505, 14005);
 initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g1, 14006, 15005);
-initializeMutationType(2, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g1, 0, 999);
 initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g6, 11004, 11504);
 initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 1501, 2500);
-initializeMutationType(3, 0.5, "n", 5, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g1, 10004, 11003);
-initializeMutationType(4, 0.5, "n", 5, 1);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 7503, 8502);
 initializeGenomicElement(g1, 14006, 15005);
 initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElementType(7, m6, 1);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 12505, 13504);
-initializeSex("A");
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g3, 3501, 4001);
 initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g7, 13505, 14005);
 initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 0, 999);
-initializeSex("A");
-initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 11505, 12504);
 initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
 initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeMutationType(5, 0.5, "n", 5, 1);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 6503, 7502);
 initializeSex("A");
-initializeMutationType(6, 0.5, "n", 5, 1);
-initializeGenomicElement(g6, 11004, 11504);
-initializeMutationType(7, 0.5, "f", 0);
-initializeGenomicElementType(1, m7, 1);
-initializeGenomicElementType(2, m1, 1);
-initializeGenomicElementType(3, m2, 1);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 7503, 8502);
+initializeSex("A");
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
 
 // Starting run at tick <start>:
 1 
 
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElementType(4, m3, 1);
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g1, 1501, 2500);
-
-// Starting run at tick <start>:
-1 
-
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g1, 12505, 13504);
 initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElementType(5, m4, 1);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElementType(6, m5, 1);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g2, 1000, 1500);
-initializeSex("A");
-initializeGenomicElementType(7, m6, 1);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 0, 999);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 7503, 8502);
 initializeSex("A");
 initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 7503, 8502);
-
-// Starting run at tick <start>:
-1 
-
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 0, 999);
-initializeGenomicElement(g2, 1000, 1500);
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g2, 1000, 1500);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g1, 1501, 2500);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 2501, 3500);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeSex("A");
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g3, 3501, 4001);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g4, 6002, 6502);
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 10004, 11003);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 6503, 7502);
-initializeSex("A");
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 4002, 5001);
-initializeGenomicElement(g1, 5002, 6001);
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-initializeGenomicElement(g7, 13505, 14005);
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
 initializeGenomicElement(g1, 14006, 15005);
 
 // Starting run at tick <start>:
 1 
 
 initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
-
-// Starting run at tick <start>:
-1 
-
-initializeGenomicElement(g4, 6002, 6502);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g5, 8503, 9003);
 initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
 
 // Starting run at tick <start>:
 1 
 
-initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 6503, 7502);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g1, 7503, 8502);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g5, 8503, 9003);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeGenomicElement(g6, 11004, 11504);
-initializeGenomicElement(g1, 14006, 15005);
-initializeGenomicElement(g1, 9004, 10003);
-initializeGenomicElement(g1, 10004, 11003);
-initializeGenomicElement(g6, 11004, 11504);
 initializeSex("A");
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 10004, 11003);
+initializeSex("A");
+initializeGenomicElement(g6, 11004, 11504);
+
+// Starting run at tick <start>:
+1 
+
 initializeGenomicElement(g1, 11505, 12504);
 initializeGenomicElement(g1, 12505, 13504);
 initializeGenomicElement(g7, 13505, 14005);
@@ -862,62 +262,614 @@ initializeSex("A");
 // Starting run at tick <start>:
 1 
 
+-------coefficients----------
+mean v1 = 1.26523
+mean v2 = 0.0
+mean v3 = 2.57577
+mean q = 2.00963
+mean v4 = 0.0
+mean v5 = 0.0
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 22.9412
+mean v3 = 0.0
+mean q = 0.00897696
+mean v4 = 0.918726
+mean v5 = 0.0
+-------coefficients----------
+mean v1 = 1.26823
+mean v2 = 0.0
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 0.00666786
+mean v5 = 7.01961
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.0
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 5.69733
+mean v5 = 8.79056
+-------coefficients----------
+mean v1 = 0.0100637
+mean v2 = 0.330521
+mean v3 = 9.84482
+mean q = 11.5027
+mean v4 = 0.0104818
+mean v5 = 4.90316
+-------coefficients----------
+mean v1 = 0.335305
+mean v2 = 0.0116566
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 0.0
+mean v5 = 0.145506
 // Initial random seed:
-6033741830278360332
+689904683681874513
+
+// Initial random seed:
+8621477926949196300
+
+// Initial random seed:
+9092885113492563847
+
+// Initial random seed:
+4715978955416517140
+
+// Initial random seed:
+7660510066612092881
+
+// Initial random seed:
+7334572636937551297
 
 // RunInitializeCallbacks():
-filename suffix data_set/21_Ness_
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+filename suffix csv_result/data_set/basic_9_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/basic_8_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/basic_10_
 initializeMutationRate(1e-07);
 initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/jump_signal_2_
+initializeMutationRate(1e-07);
 initializeMutationType(2, 0.5, "n", 5, 1);
 initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/jump_signal_1_
+initializeMutationRate(1e-07);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/basic_7_
+initializeMutationRate(1e-07);
+initializeMutationType(2, 0.5, "n", 5, 1);
 initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(2, m1, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 12505, 13504);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g1, 10004, 11003);
+initializeSex("A");
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g6, 11004, 11504);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeSex("A");
+initializeGenomicElement(g1, 11505, 12504);
+initializeSex("A");
+initializeGenomicElement(g1, 11505, 12504);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeSex("A");
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g1, 14006, 15005);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeSex("A");
+initializeSex("A");
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.014491
+mean v3 = 0.0345788
+mean q = 0.0463904
+mean v4 = 0.134906
+mean v5 = 7.55198
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 3.74468
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 0.32408
+mean v5 = 5.14685
+-------coefficients----------
+mean v1 = 1.44272
+mean v2 = 0.0854171
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 1.29697
+mean v5 = 0.07651
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.0
+mean v3 = 0.632327
+mean q = 0.0
+mean v4 = 0.240769
+mean v5 = 5.99612
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.0
+mean v3 = 7.50559
+mean q = 1.00302
+mean v4 = 0.10274
+mean v5 = 0.0
+-------coefficients----------
+mean v1 = 0.0388847
+mean v2 = 0.199279
+mean v3 = 8.10276
+mean q = 12.7304
+mean v4 = 5.61008
+mean v5 = 8.27272
+// Initial random seed:
+8036483985951435960
+
+// Initial random seed:
+2240402391795368835
+
+// Initial random seed:
+7720800977536493075
+
+// Initial random seed:
+5619923619741809233
+
+// Initial random seed:
+1192897065191981264
+
+// Initial random seed:
+3991771610959983750
+
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+// RunInitializeCallbacks():
+filename suffix csv_result/data_set/jump_signal_6_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/jump_signal_4_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/jump_signal_5_
+initializeMutationRate(1e-07);
+filename suffix csv_result/data_set/jump_signal_3_
+initializeMutationRate(1e-07);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/jump_signal_7_
+initializeMutationRate(1e-07);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+filename suffix csv_result/data_set/jump_signal_8_
+initializeMutationRate(1e-07);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(1, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(2, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(3, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(4, 0.5, "n", 5, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeMutationType(5, 0.5, "n", 5, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(6, 0.5, "n", 5, 1);
 initializeMutationType(5, 0.5, "n", 5, 1);
 initializeMutationType(6, 0.5, "n", 5, 1);
 initializeMutationType(7, 0.5, "f", 0);
 initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(6, 0.5, "n", 5, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeMutationType(7, 0.5, "f", 0);
 initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeMutationType(7, 0.5, "f", 0);
+initializeGenomicElementType(1, m7, 1);
 initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(2, m1, 1);
 initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(3, m2, 1);
 initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(1, m7, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(2, m1, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(3, m2, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElementType(6, m5, 1);
 initializeGenomicElementType(6, m5, 1);
 initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElementType(4, m3, 1);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElementType(4, m3, 1);
 initializeGenomicElement(g1, 0, 999);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElementType(5, m4, 1);
+initializeGenomicElement(g2, 1000, 1500);
 initializeGenomicElement(g2, 1000, 1500);
 initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElementType(5, m4, 1);
 initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElementType(6, m5, 1);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElementType(7, m6, 1);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElementType(7, m6, 1);
 initializeGenomicElement(g3, 3501, 4001);
 initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 0, 999);
 initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 1501, 2500);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 0, 999);
+initializeGenomicElement(g3, 3501, 4001);
 initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g2, 1000, 1500);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 1501, 2500);
 initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 2501, 3500);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g3, 3501, 4001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 4002, 5001);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 5002, 6001);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 6503, 7502);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g1, 7503, 8502);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g4, 6002, 6502);
+initializeGenomicElement(g6, 11004, 11504);
 initializeGenomicElement(g1, 7503, 8502);
 initializeGenomicElement(g5, 8503, 9003);
-initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 10004, 11003);
 initializeGenomicElement(g1, 10004, 11003);
 initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 6503, 7502);
 initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 7503, 8502);
 initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g5, 8503, 9003);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g7, 13505, 14005);
+initializeGenomicElement(g1, 9004, 10003);
+initializeGenomicElement(g1, 14006, 15005);
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 10004, 11003);
+initializeGenomicElement(g7, 13505, 14005);
+initializeSex("A");
+initializeGenomicElement(g1, 11505, 12504);
+initializeGenomicElement(g6, 11004, 11504);
+initializeGenomicElement(g1, 14006, 15005);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 12505, 13504);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeGenomicElement(g1, 11505, 12504);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeSex("A");
+initializeSex("A");
+initializeGenomicElement(g7, 13505, 14005);
+initializeSex("A");
+initializeGenomicElement(g1, 12505, 13504);
+initializeGenomicElement(g1, 14006, 15005);
 initializeGenomicElement(g7, 13505, 14005);
 initializeGenomicElement(g1, 14006, 15005);
+initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
+initializeSex("A");
 initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
 initializeSex("A");
 
 // Starting run at tick <start>:
 1 
 
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
 
 // Starting run at tick <start>:
 1 
 
-initializeGenomicElement(g1, 11505, 12504);
-initializeGenomicElement(g1, 12505, 13504);
-initializeGenomicElement(g7, 13505, 14005);
-initializeGenomicElement(g1, 14006, 15005);
-initializeRecombinationRate(c(1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08, 0.5, 1e-08), c(2500, 2501, 5001, 5002, 7502, 7503, 10003, 10004, 12504, 12505, 15005));
-initializeSex("A");
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
+
+// Starting run at tick <start>:
+1 
+
 
 // Starting run at tick <start>:
 1 
