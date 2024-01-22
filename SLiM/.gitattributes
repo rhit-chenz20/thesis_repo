@@ -1,3 +1,0 @@
-# see http://robots.thoughtbot.com/xcode-and-git-bridging-the-gap
-
-*.pbxproj binary merge=union
