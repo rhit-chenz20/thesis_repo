@@ -3,20 +3,21 @@ initialize() {
 	//make the directory as a argument
 //	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/slim_ibm");
 	setwd("~/thesis_repo/slim_ibm");  
+	//setSeed(8229348833888987099);
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
 	defineConstant("pop_size", 500);
-	defineConstant("v1_mean", 5.0);
+	defineConstant("v1_mean", 0.0);
 	defineConstant("v1_sd", 1.0);
-	defineConstant("v2_mean", 5.0);
+	defineConstant("v2_mean", 0.0);
 	defineConstant("v2_sd", 1.0);
-	defineConstant("v3_mean", 5.0);
+	defineConstant("v3_mean", 0.0);
 	defineConstant("v3_sd", 1.0);
-	defineConstant("v4_mean", 5.0);
+	defineConstant("v4_mean", 0.0);
 	defineConstant("v4_sd", 1.0);
-	defineConstant("v5_mean", 5.0);
+	defineConstant("v5_mean", 0.0);
 	defineConstant("v5_sd", 1.0);
-	defineConstant("v6_mean", 5.0);
+	defineConstant("v6_mean", 0.0);
 	defineConstant("v6_sd", 1.0);
 	defineConstant("QTL_length", 500);
 	if(!exists("startGen"))
@@ -49,7 +50,7 @@ initialize() {
 //	sim.setValue("base_vals", base_vals);
 	
 	// write file header
-	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "signal", "choosiness", base_vals.serialize("csv")[0], sep=", ");
+	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "signal", base_vals.serialize("csv")[0], sep=", ");
 	print(var_names);
 	writeFile(fn, var_names);
 	initializeMutationRate(1e-7);
@@ -254,7 +255,7 @@ function (float)F_trust_receiver(float$ v4, float$ v5, float$ signal)
 {
 //	return v5*signal+1;
 //	actual amplification
-	return v5^signal+1;
+	return signal^v5;
 //	return signal;
 }
 
@@ -302,7 +303,6 @@ s2 2999 early()
 
 
 s3 3000 early() {
-	sim.setValue("choosiness", c());
 	if(sim.substitutions.size()>0){
 		sub = sim.substitutions;
 		base_vals.setValue("v1_b", sum(sub[sub.mutationType == m1].selectionCoeff));
@@ -338,9 +338,8 @@ s4 3000 late()
 	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
 	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
 	signal = sim.getValue("signal");
-	choosinesses = mean(sim.getValue("choosiness"));
 	
-	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), signal, choosinesses, sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
+	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), signal, sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
 		stop("Error writing file.");
 	}
 }
@@ -348,8 +347,6 @@ s4 3000 late()
 s7 15000 late()
 {
 	cat("-------coefficients----------\n");
-	base_vals = sim.getValue("base_vals");	
-	
 	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
 	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
 	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
@@ -408,7 +405,14 @@ s5 3000 modifyChild(p1){
 		ne_sex_ratio = 4*nm*nf/(nf+nm);
 		sim.setValue("Ness", ne_sex_ratio);
 		
-		sim.setValue("signal", mean(p1.individuals.tagF));
+		males = c();
+		for (ind in p1.individuals){
+			if (ind.sex == "M"){
+				males = c(males, ind.tagF);
+			}
+		}
+		
+		sim.setValue("signal", mean(males));
 	}
 	
 	

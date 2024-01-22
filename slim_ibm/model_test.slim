@@ -1,0 +1,425 @@
+// **************************** Model Initialization *************************************
+initialize() {
+	//make the directory as a argument
+//	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/slim_ibm");
+	setwd("~/thesis_repo/slim_ibm");  
+	setSeed(8229348833888987099);
+	defineGlobal("MStrategy", 0);
+	defineGlobal("FStrategy", 0);
+	defineConstant("pop_size", 500);
+	defineConstant("v1_mean", 5.0);
+	defineConstant("v1_sd", 1.0);
+	defineConstant("v2_mean", 5.0);
+	defineConstant("v2_sd", 1.0);
+	defineConstant("v3_mean", 5.0);
+	defineConstant("v3_sd", 1.0);
+	defineConstant("v4_mean", 5.0);
+	defineConstant("v4_sd", 1.0);
+	defineConstant("v5_mean", 5.0);
+	defineConstant("v5_sd", 1.0);
+	defineConstant("v6_mean", 5.0);
+	defineConstant("v6_sd", 1.0);
+	defineConstant("QTL_length", 500);
+	if(!exists("startGen"))
+		defineConstant("startGen", 4000);
+	if(!exists("stopGen"))
+		defineConstant("stopGen", 20000);
+	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
+	if(!exists("stop_enabled"))
+		defineConstant("stop_enabled", 0);
+	if(!exists("stop_trait"))
+		defineConstant("stop_trait", "signal");
+	if(!exists("stop_start_gen"))
+		defineConstant("stop_start_gen", 9000);
+	// which trait to jump and see the counterpart reaction: signal or choosiness
+	if(!exists("jump_enabled"))
+		defineConstant("jump_enabled", 0);
+	if(!exists("jump_trait"))
+		defineConstant("jump_trait", "signal");
+	if(!exists("jump_start_gen"))
+		defineConstant("jump_start_gen", 9000);
+	if(!exists("filename"))
+		defineConstant("filename", "csv_result/test_run/test");
+	defineConstant("plot_script", "plot.R");
+	defineConstant("seed", getSeed());
+	defineConstant("fn", paste(filename,"_", seed, ".csv", sep=""));
+	cat("filename: "+fn+"\n");
+	
+	base_vals = Dictionary("v1_b", 0.0, "v2_b", 0.0, "v3_b", 0.0, "q_b", 0.0, "v4_b", 0.0, "v5_b", 0.0);
+	defineGlobal("base_vals", base_vals);
+//	sim.setValue("base_vals", base_vals);
+	
+	// write file header
+	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "signal", base_vals.serialize("csv")[0], sep=", ");
+	print(var_names);
+	writeFile(fn, var_names);
+	initializeMutationRate(1e-7);
+	
+	// m1: v1
+	initializeMutationType("m1", 0.5, "n", v1_mean, v1_sd);
+	// m2: v2
+	initializeMutationType("m2", 0.5, "n", v2_mean, v2_sd);
+	// m3: v3
+	initializeMutationType("m3", 0.5, "n", v3_mean, v3_sd);
+	// m4: q
+	initializeMutationType("m4", 0.5, "n", v4_mean, v4_sd);
+	// m5: v4
+	initializeMutationType("m5", 0.5, "n", v5_mean, v5_sd);
+	// m6: v5
+	initializeMutationType("m6", 0.5, "n", v6_mean, v6_sd);
+	// m7: neutral region
+	initializeMutationType("m7", 0.5, "f", 0.0);
+	
+	// g1: noncoding region
+	initializeGenomicElementType("g1", m7, 1.0);
+	initializeGenomicElementType("g2", m1, 1.0);
+	initializeGenomicElementType("g3", m2, 1.0);
+	initializeGenomicElementType("g4", m3, 1.0);
+	initializeGenomicElementType("g5", m4, 1.0);
+	initializeGenomicElementType("g6", m5, 1.0);
+	initializeGenomicElementType("g7", m6, 1.0);
+	
+	defineConstant("C", 6);    // number of QTLs
+	defineConstant("W", 1000);  // size of neutral buffer on each side
+	pos = 0;
+	q = NULL;
+	// QTL orders
+	g_order = c(g2, g3, g4, g5, g6, g7);
+	// remember the trait to stop mutation
+	s = NULL;
+	// index of the genomic element to disable mutation on
+	s_i = 0;
+	if(stop_trait == "signal"){
+		// disable mutation on q-m4-g5
+		s_i = 3;
+	}else if (stop_trait == "choosiness"){
+		// disable mutation on v5-m6-g7
+		s_i = 5;
+	}
+	
+	i=0;
+	for (g in g_order)
+	{
+		initializeGenomicElement(g1, pos, pos + W-1);
+		pos = pos + W;
+		
+		if (s_i==i){
+			s=c(pos, pos+QTL_length);
+		}
+		
+		initializeGenomicElement(g, pos, pos+QTL_length);
+		q = c(q, pos+QTL_length);
+		pos = pos + 1 + QTL_length;
+		
+		initializeGenomicElement(g1, pos, pos + W-1);
+		pos = pos + W;
+		
+		i=i+1;
+	}
+	s = c(s, pos-1);
+	// remember the position of stopped mutation
+	defineConstant("S_ends", s);
+	
+	// we want the QTLs to be unlinked; build a recombination map for that
+	rates = c(rep(c(1e-8, 0.5), C-1), 1e-8);
+	ends = (repEach(q + W, 2) + rep(c(0,1), C))[0:(C*2 - 2)];
+	initializeRecombinationRate(rates, ends);
+	// enable sex
+	initializeSex("A");
+}
+
+1 early()
+{
+	sim.addSubpop("p1", 500);
+	// start mate choice
+	community.rescheduleScriptBlock(s1, start = startGen, end = stopGen);
+	// set up constants for data collection
+	community.rescheduleScriptBlock(s2, ticks = startGen-1);
+	// early event to be executed every gen after mate choice is turned on
+	community.rescheduleScriptBlock(s3, start = startGen, end = stopGen);
+	// record data every 5 generations
+	community.rescheduleScriptBlock(s4, start = startGen, end = stopGen);
+	// calculate Ne
+	community.rescheduleScriptBlock(s5, start = startGen, end = stopGen);
+	// stop mutation
+	community.rescheduleScriptBlock(s6, ticks = stop_start_gen);
+	// terminate simulation
+	community.rescheduleScriptBlock(s7, ticks = stopGen);
+}
+
+
+// *************************** Mate choice **********************************
+
+// define the female mate probability vector
+// male's signals are in their tagF
+s1 3000 mateChoice(p1) {
+	//pseudo-parameters
+	//individual: The parent already chosen (the female, in sexual simulations)
+	//subpop: The subpopulation into which the offspring will be placed
+	//sourceSubpop: The subpopulation from which the parents are being chosen
+	//weights: The standard fitness-based weights for all individuals 
+	
+	weight = NULL;
+	for (ind in sourceSubpop.individuals)
+	{
+		if(ind.tagF == -1.0)
+		{
+			weight = c(weight, 0);
+		}else if (ind.sex == "F")
+		{
+			weight = c(weight, 0);
+		}else{
+			weight = c(weight, calculate_female_response(individual, ind.tagF));
+		}
+	}
+	
+	if (sum(weight) == 0)
+	{
+		cat("Mate choice: all wieghts are calculated to be zero. Using default weights\n");
+		assert(sum(weight) != 0, "Mate Choice Error");
+		return NULL;
+	}
+    if(sim.cycle == (11940 + startGen)){
+
+        cat(weight + "\n");
+    }
+    
+	return weights * weight;
+}
+
+// TODO: calculates the signal sent by a male
+function (float)calculate_Signal_Intensity(o<Individual>$ ind)
+{
+	if(ind.sex == "M"){
+		// get the coeficient stored in the male's genome and quality
+		v1 = ind.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+		v2 = ind.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+		v3 = ind.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+		q = ind.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
+		
+		signal = -1.0;
+		
+		if(MStrategy == 0)
+		{
+			signal = M_honest_signal(v1, v2, v3, q);
+		}else if(MStrategy == 1)
+		{
+			signal = M_dishonest_signal(v1, v2, v3, q);
+		}
+		
+		if (jump_enabled == 1 & community.tick >= jump_start_gen & jump_trait == "signal"){
+			signal = Signal_jump(signal);
+		}
+		
+		return signal;
+	
+	}else{
+		return 0.0;
+	}
+}
+
+
+// TODO: calculates the resource the female is willing to give
+function (float)calculate_female_response(o<Individual>$ ind, float$ signal)
+{
+	if(ind.sex == "F"){
+		// get the coeficient stored in the male's genome and quality
+		v4 = ind.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+		v5 = ind.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
+		response = -1.0;
+		
+		if(FStrategy == 0)
+		{
+			// calculate the response
+			response = F_trust_receiver(v4, v5, signal);
+		}
+		
+		if (jump_enabled == 1 & community.tick >= jump_start_gen & jump_trait == "choosiness"){
+			response = Response_jump(response);
+		}
+		return response;
+	}else{
+		return 0.0;
+	}
+}
+
+function (float)M_honest_signal(float$ v1, float$ v2, float$ v3, float$ q)
+{
+	return v3*q +1;
+	//	return q+1.5;
+}
+
+function (float)M_dishonest_signal(float$ v1, float$ v2, float$ v3, float$ q)
+{
+	signal = v1*q + 1/(v2*q+1);
+	return signal;
+	//	return q+1.5;
+}
+
+function (float)F_trust_receiver(float$ v4, float$ v5, float$ signal)
+{
+//	return v5*signal+1;
+//	actual amplification
+	return signal^v5;
+//	return signal;
+}
+
+function (float)Signal_jump(float$ ori_signal)
+{
+	offset = 50;
+	return ori_signal + offset;
+}
+
+function (float)Response_jump(float$ ori_response)
+{
+	offset = 50;
+	return ori_response + offset;
+}
+
+s6 9000 early()
+{
+	if(stop_enabled == 1){
+		sim.chromosome.setMutationRate(c(1e-07, 0.0, 1e-7),S_ends);
+	}
+}
+
+//******************************** Data Collection ***************************************
+s2 2999 early()
+{
+	sim.setValue("v1s", NULL);
+	sim.setValue("v2s", NULL);
+	sim.setValue("v3s", NULL);
+	sim.setValue("qs", NULL);
+	sim.setValue("v4s", NULL);
+	sim.setValue("v5s", NULL);
+	sim.setValue("Ness", NULL);
+	sim.setValue("Nefs", NULL);
+	sim.setValue("gens", NULL);
+	if(sim.substitutions.size()>0){
+		sub = sim.substitutions;
+		base_vals.setValue("v1_b", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2_b", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3_b", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q_b", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4_b", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5_b", sum(sub[sub.mutationType == m6].selectionCoeff));
+	}
+}
+
+
+s3 3000 early() {
+	if(sim.substitutions.size()>0){
+		sub = sim.substitutions;
+		base_vals.setValue("v1_b", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2_b", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3_b", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q_b", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4_b", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5_b", sum(sub[sub.mutationType == m6].selectionCoeff));
+	}
+	
+	for (ind in p1.individuals)
+	{
+		signal = calculate_Signal_Intensity(ind);
+		ind.tagF = signal;
+		ind.tag = 0;
+		ind.tagL0 = F;
+	}
+	// keep track of the number of child counted (Ne)
+	p1.tag = 0;
+	p1.setValue("FParent", 0);
+	p1.setValue("MParent", 0);
+}
+
+
+s4 3000 late()
+{
+	if (sim.cycle % 5 != 0) return;
+	
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
+	signal = sim.getValue("signal");
+	
+	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), signal, sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
+		stop("Error writing file.");
+	}
+}
+
+s7 15000 late()
+{
+	cat("-------coefficients----------\n");
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
+	cat("mean v1 = "+mean(v1)+"\n");
+	cat("mean v2 = "+mean(v2)+"\n");
+	cat("mean v3 = "+mean(v3)+"\n");
+	cat("mean q = "+mean(q)+"\n");
+	cat("mean v4 = "+mean(v4)+"\n");
+	cat("mean v5 = "+mean(v5)+"\n");
+	
+	sim.simulationFinished();
+}
+
+// disable mutation for QTLs
+mutationEffect(m1) { return 1.0; }
+mutationEffect(m2) { return 1.0; }
+mutationEffect(m3) { return 1.0; }
+mutationEffect(m4) { return 1.0; }
+mutationEffect(m5) { return 1.0; }
+mutationEffect(m6) { return 1.0; }
+mutationEffect(m7) { return 1.0; }
+
+s5 3000 modifyChild(p1){
+	if(sim.cycle % 5 != 0) return T;
+	
+	parent1.tag = parent1.tag + 1;
+	parent2.tag = parent2.tag + 1;
+	FParent = p1.getValue("FParent");
+	MParent = p1.getValue("MParent");
+	
+	if(parent1.tagL0==F){
+		parent1.tagL0 = T;
+		FParent = FParent +1;
+		p1.setValue("FParent", FParent);
+	
+	}
+	
+	if(parent2.tagL0==F){
+		parent2.tagL0 = T;
+		MParent = MParent +1;
+		p1.setValue("MParent", MParent);
+	
+	}
+	
+	p1.tag = p1.tag + 1;
+	if(p1.tag == subpop.individualCount){
+		k_var=var(p1.individuals.tag);
+		ne_family_size = (4*p1.individualCount)/(k_var+2);
+		sim.setValue("Nefs", ne_family_size);
+		
+		nm = MParent;
+		nf = FParent;
+		ne_sex_ratio = 4*nm*nf/(nf+nm);
+		sim.setValue("Ness", ne_sex_ratio);
+		
+		males = c();
+		for (ind in p1.individuals){
+			if (ind.sex == "M"){
+				males = c(males, ind.tagF);
+			}
+		}
+		
+		sim.setValue("signal", mean(males));
+	}
+	
+	
+	return T;
+}

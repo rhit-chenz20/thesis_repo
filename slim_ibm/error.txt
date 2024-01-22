@@ -1,0 +1,501 @@
+nohup: ignoring input
+mkdir: cannot create directory ‘../../thesis_result’: File exists
+mkdir: cannot create directory ‘../../thesis_result/data_set’: File exists
+ERROR (Population::ApplyMateChoiceCallbacks): weight returned by mateChoice() callbacERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 351, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (EidosInterpreter::Evaluate_Call): operand type NULL is not supported by the '.' operator.
+
+Error on script line 352, character 55:
+
+   v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+                                                         ^
+ERROR (Population::ApplyMateChoiceCallbacks): weight returned by mateChoice() callback is not finite.
+
+Error on script line 155, character 8:
+
+s1 3000 mateChoice(p1) {
+        ^^^^^^^^^^
