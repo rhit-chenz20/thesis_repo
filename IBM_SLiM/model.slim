@@ -1,7 +1,7 @@
 // **************************** Model Initialization *************************************
 initialize() {
 	//make the directory as a argument
-	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM/csv_result");
+	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM");
 //setwd("~/thesis_repo/IBM_SLiM/csv_result");
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
@@ -21,6 +21,8 @@ initialize() {
 	defineConstant("QTL_length", 500);
 	if(!exists("startGen"))
 		defineConstant("startGen", 3000);
+	if(!exists("stopGen"))
+		defineConstant("stopGen", 15000);
 	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
 	if(!exists("stop_enabled"))
 		defineConstant("stop_enabled", 0);
@@ -36,7 +38,7 @@ initialize() {
 	if(!exists("jump_start_gen"))
 		defineConstant("jump_start_gen", 9000);
 	if(!exists("suffix"))
-		defineConstant("suffix", "test_run/");
+		defineConstant("suffix", "csv_result/test_run/");
 	defineConstant("v1_f", suffix+"v1s.csv");
 	defineConstant("v2_f", suffix+"v2s.csv");
 	defineConstant("v3_f", suffix+"v3s.csv");
@@ -49,6 +51,11 @@ initialize() {
 	defineConstant("nes_f", suffix+"ness.csv");
 	defineConstant("plot_script", "plot.R");
 	cat("filename suffix "+suffix+"\n");
+
+	// terminate the program if the output filepath isn't valid
+	test_file = suffix+"_text.csv";
+	writeFile(test_file, "test");
+	deleteFile(test_file);
 	initializeMutationRate(1e-7);
 	
 	// m1: v1
@@ -127,12 +134,20 @@ initialize() {
 1 early()
 {
 	sim.addSubpop("p1", 500);
-	community.rescheduleScriptBlock(s1, start = startGen);
-	community.rescheduleScriptBlock(s2, start = startGen-1);
-	community.rescheduleScriptBlock(s3, start = startGen);
-	community.rescheduleScriptBlock(s4, start = startGen);
-	community.rescheduleScriptBlock(s5, start = startGen);
+	// start mate choice
+	community.rescheduleScriptBlock(s1, start = startGen, end = stopGen);
+	// set up constants for data collection
+	community.rescheduleScriptBlock(s2, ticks = startGen-1);
+	// early event to be executed every gen after mate choice is turned on
+	community.rescheduleScriptBlock(s3, start = startGen, end = stopGen);
+	// record data every 5 generations
+	community.rescheduleScriptBlock(s4, start = startGen, end = stopGen);
+	// calculate Ne
+	community.rescheduleScriptBlock(s5, start = startGen, end = stopGen);
+	// stop mutation
 	community.rescheduleScriptBlock(s6, ticks = stop_start_gen);
+	// terminate simulation
+	community.rescheduleScriptBlock(s7, ticks = stopGen);
 }
 
 
@@ -312,7 +327,7 @@ s4 3000 late()
 
 }
 
-15000 late()
+s7 15000 late()
 {
 	cat("-------coefficients----------\n");
 	v1 = p1.individuals.sumOfMutationsOfType(m1);
@@ -345,6 +360,8 @@ s4 3000 late()
 	success = writeFile(v5_f, paste(v5s, sep="\n"));
 	success = writeFile(nef_f, paste(nefs, sep="\n"));
 	success = writeFile(nes_f, paste(ness, sep="\n"));
+	
+	sim.simulationFinished();
 }
 
 // disable mutation for QTLs

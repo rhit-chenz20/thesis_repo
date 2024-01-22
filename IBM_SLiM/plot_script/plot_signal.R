@@ -1,7 +1,7 @@
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
 
-pdf(paste0("../plots/", args[1], ".pdf"))
+pdf(paste0("plots/", args[1], ".pdf"))
 args <- args[-1]
 
 v1s <- c()
@@ -45,7 +45,7 @@ if(length(args) == 0){
 }else{
   i <- 1
   for(suffix in args){
-    suffix <- paste("../csv_result/",suffix, sep="")
+    # suffix <- paste("csv_result/",suffix, sep="")
     if(length(v1s) == 0){
       v1s <- read.csv(paste(suffix,"v1s.csv", sep = ""), header = FALSE)
       v2s <- read.csv(paste(suffix,"v2s.csv", sep = ""), header = FALSE)
