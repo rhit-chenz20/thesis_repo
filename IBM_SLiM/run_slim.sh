@@ -31,7 +31,7 @@ done
 for i in {1..100}
 do
    let "c+=1"
-   /work/williarj/2223_balancing_selection/slimexe -d "suffix='csv_result/data_set/jump_choosiness_${i}_'" -d "jump_enabled=1" -d "jump_trait=choosiness" model.slim &
+   /work/williarj/2223_balancing_selection/slimexe -d "suffix='csv_result/data_set/jump_choosiness_${i}_'" -d "jump_enabled=1" -d "jump_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
@@ -55,7 +55,7 @@ done
 for i in {1..100}
 do
    let "c+=1"
-   /work/williarj/2223_balancing_selection/slimexe -d "suffix='csv_result/data_set/stop_choosiness_${i}_'" -d "stop_enabled=1" -d "stop_trait=choosiness" model.slim &
+   /work/williarj/2223_balancing_selection/slimexe -d "suffix='csv_result/data_set/stop_choosiness_${i}_'" -d "stop_enabled=1" -d "stop_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
