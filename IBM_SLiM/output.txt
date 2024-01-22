@@ -487,3 +487,24 @@ mean v3 = 8.08867
 mean q = 0.0
 mean v4 = 0.0
 mean v5 = 8.82281
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 1.37339
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 0.0
+mean v5 = 0.0
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.0
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 3.02877
+mean v5 = 4.50762
+-------coefficients----------
+mean v1 = 0.0
+mean v2 = 0.0
+mean v3 = 0.0
+mean q = 0.0
+mean v4 = 0.0218777
+mean v5 = 0.357029
