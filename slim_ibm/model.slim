@@ -1,8 +1,8 @@
 // **************************** Model Initialization *************************************
 initialize() {
 	//make the directory as a argument
-//	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM");
-	setwd("~/thesis_repo/IBM_SLiM");
+//	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/slim_ibm");
+	setwd("~/thesis_repo/slim_ibm");
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
 	defineConstant("pop_size", 500);
@@ -22,7 +22,7 @@ initialize() {
 	if(!exists("startGen"))
 		defineConstant("startGen", 3000);
 	if(!exists("stopGen"))
-		defineConstant("stopGen", 15000);
+		defineConstant("stopGen", 3100);
 	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
 	if(!exists("stop_enabled"))
 		defineConstant("stop_enabled", 0);
@@ -326,19 +326,23 @@ s4 3000 late()
 {
 	if (sim.cycle % 5 != 0) return;
 	
-	v1 = p1.individuals.sumOfMutationsOfType(m1);
-	v2 = p1.individuals.sumOfMutationsOfType(m2);
-	v3 = p1.individuals.sumOfMutationsOfType(m3);
-	q = p1.individuals.sumOfMutationsOfType(m4);
-	v4 = p1.individuals.sumOfMutationsOfType(m5);
-	v5 = p1.individuals.sumOfMutationsOfType(m6);
-	sim.setValue("v1s", c(sim.getValue("v1s"), mean(v1)));
-	sim.setValue("v2s", c(sim.getValue("v2s"), mean(v2)));
-	sim.setValue("v3s", c(sim.getValue("v3s"), mean(v3)));
-	sim.setValue("qs", c(sim.getValue("qs"), mean(q)));
-	sim.setValue("v4s", c(sim.getValue("v4s"), mean(v4)));
-	sim.setValue("v5s", c(sim.getValue("v5s"), mean(v5)));
-	sim.setValue("gens", c(sim.getValue("gens"), sim.cycle));
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+sim.getValue("base_vals").getValue("v1");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+sim.getValue("base_vals").getValue("v2");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+sim.getValue("base_vals").getValue("v3");
+	q = p1.individuals.sumOfMutationsOfType(m4)+sim.getValue("base_vals").getValue("q");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+sim.getValue("base_vals").getValue("v4");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+sim.getValue("base_vals").getValue("v5");
+//	sim.setValue("v1s", c(sim.getValue("v1s"), mean(v1)));
+//	sim.setValue("v2s", c(sim.getValue("v2s"), mean(v2)));
+//	sim.setValue("v3s", c(sim.getValue("v3s"), mean(v3)));
+//	sim.setValue("qs", c(sim.getValue("qs"), mean(q)));
+//	sim.setValue("v4s", c(sim.getValue("v4s"), mean(v4)));
+//	sim.setValue("v5s", c(sim.getValue("v5s"), mean(v5)));
+
+	
+	if(!writeFile(filename, paste(paste(sim.cycle, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), sep="\n"), append=T)){
+		stop("Error writing file.");
+	}
 }
 
 s7 15000 late()
@@ -357,22 +361,22 @@ s7 15000 late()
 	cat("mean v4 = "+mean(v4)+"\n");
 	cat("mean v5 = "+mean(v5)+"\n");
 	
-	v1s = sim.getValue("v1s");
-	v2s = sim.getValue("v2s");
-	v3s = sim.getValue("v3s");
-	qs = sim.getValue("qs");
-	v4s = sim.getValue("v4s");
-	v5s = sim.getValue("v5s");
-	nefs = sim.getValue("Nefs");
-	ness = sim.getValue("Ness");
-	gens = sim.getValue("gens");
-	
-	for (i in 0:(length(gens)-1))
-	{
-		if(!writeFile(filename, paste(paste(gens[i],v1s[i],v2s[i],v3s[i],qs[i],v4s[i],v5s[i],nefs[i],ness[i], sep=","), sep="\n"), append=T)){
-			stop("Error writing file.");
-		}
-	}
+	//	v1s = sim.getValue("v1s");
+	//	v2s = sim.getValue("v2s");
+	//	v3s = sim.getValue("v3s");
+	//	qs = sim.getValue("qs");
+	//	v4s = sim.getValue("v4s");
+	//	v5s = sim.getValue("v5s");
+	//	nefs = sim.getValue("Nefs");
+	//	ness = sim.getValue("Ness");
+	//	gens = sim.getValue("gens");
+	//	
+	//	for (i in 0:(length(gens)-1))
+	//	{
+	//		if(!writeFile(filename, paste(paste(gens[i],v1s[i],v2s[i],v3s[i],qs[i],v4s[i],v5s[i],nefs[i],ness[i], sep=","), sep="\n"), append=T)){
+	//			stop("Error writing file.");
+	//		}
+	//	}
 	sim.simulationFinished();
 }
 
@@ -411,12 +415,12 @@ s5 3000 modifyChild(p1){
 	if(p1.tag == subpop.individualCount){
 		k_var=var(p1.individuals.tag);
 		ne_family_size = (4*p1.individualCount)/(k_var+2);
-		sim.setValue("Nefs", c(sim.getValue("Nefs"), ne_family_size));
+		sim.setValue("Nefs", ne_family_size);
 		
 		nm = MParent;
 		nf = FParent;
 		ne_sex_ratio = 4*nm*nf/(nf+nm);
-		sim.setValue("Ness", c(sim.getValue("Ness"), ne_sex_ratio));
+		sim.setValue("Ness", ne_sex_ratio);
 	}
 	
 	return T;

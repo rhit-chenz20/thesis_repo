@@ -1,6 +1,6 @@
 #!/bin/bash
 declare c=0
-declare max=40
+declare max=60
 
 # jump-signal
 for i in {1..50}
