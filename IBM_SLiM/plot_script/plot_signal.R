@@ -1,8 +1,9 @@
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
 
-pdf(paste0("plots/", args[1], ".pdf"))
+fn <- args[1]
 args <- args[-1]
+pdf(paste0("plots/", fn, "_all.pdf"))
 
 v1s <- c()
 v2s <- c()
@@ -65,7 +66,7 @@ x <- (1:length(v1s$V1)) * 5
 yrange <- c(-0.007, 0.021)
 # par(mfrow=c(2,3), mar=c(4.0, 4.0, 1.5, 1.5))
 xmax<- 12000
-xrange <- c(5800,7000)
+xrange <- c(0,12000)
 ticks<-c(0, 12000, 4)
 
 
@@ -120,6 +121,33 @@ legend("topright",           # Legend position
 # 
 # PlotData(x, v5s, xrange, yrange, "Generation", "v5 value", "orange",
 #          adjustcolor("navajowhite", alpha.f = 0.50), ticks)
+box()
+
+pdf(paste0("plots/", fn, "_zoomed.pdf"))
+xrange <- c(5900,7500)
+
+plot(x=x, y=selection, xlim=xrange, ylim=c(0,1300),
+     type="l",xlab="Generation", ylab="", cex.axis=0.95, cex.lab=1.2,
+     mgp=c(2.5, 0.7, 0), col="salmon", lwd=2, xaxp=ticks)
+
+lines(x, signals, col="green")
+
+lines(x, rowMeans(nefs), col="maroon1")
+legend("topright",           # Legend position
+       legend = c("selection", "signal", "Ne_family size"),  # Legend labels
+       col = c("red", "green", "maroon1"),    # Colors
+       pch = 1) 
+
+PlotData(x, v3s, xrange, yrange, "Generation", "", "blue",
+         adjustcolor("lightblue", alpha.f = 0.50), ticks)
+
+lines(x, rowMeans(qs), col="purple")
+lines(x, rowMeans(v5s), col="orange")
+
+legend("topright",           # Legend position
+       legend = c("v3", "q", "v5"),  # Legend labels
+       col = c("blue", "purple", "orange"),    # Colors
+       pch = 1) 
 
 
 box()

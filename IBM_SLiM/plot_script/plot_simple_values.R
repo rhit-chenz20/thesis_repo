@@ -1,8 +1,9 @@
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
 
-pdf(paste0("../plots/", args[1], ".pdf"))
+fn <- args[1]
 args <- args[-1]
+pdf(paste0("plots/", fn, ".pdf"))
 
 v1s <- c()
 v2s <- c()
@@ -46,7 +47,7 @@ if(length(args) == 0){
 }else{
   i <- 1
   for(suffix in args){
-    suffix <- paste("../csv_result/",suffix, sep="")
+    # suffix <- paste("../csv_result/",suffix, sep="")
     if(length(v1s) == 0){
       v1s <- read.csv(paste(suffix,"v1s.csv", sep = ""), header = FALSE)
       v2s <- read.csv(paste(suffix,"v2s.csv", sep = ""), header = FALSE)
@@ -62,7 +63,7 @@ if(length(args) == 0){
 }
 
 x <- (1:length(v1s$V1)) * 5
-x_no_gap <- (1: length(nes$V1))
+# x_no_gap <- (1: length(nes$V1))
 # ymax <- max(v1s, v2s, v3s, qs, v4s, v5s)
 yrange <- c(-0.007, 0.021)
 par(mfrow=c(2,3), mar=c(4.0, 4.0, 1.5, 1.5))
@@ -71,17 +72,19 @@ ticks<-c(0, 12000, 4)
 
 
 
-PlotData(x, v1s, xmax, yrange, "", "v1 value", "red", 
-         adjustcolor("salmon", alpha.f = 0.20),ticks)
-PlotData(x, v2s, xmax, yrange, "", "v2 value", "green", 
-         adjustcolor("lightgreen", alpha.f = 0.50), ticks)
+# PlotData(x, v1s, xmax, yrange, "", "v1 value", "red", 
+#          adjustcolor("salmon", alpha.f = 0.20),ticks)
+# PlotData(x, v2s, xmax, yrange, "", "v2 value", "green", 
+#          adjustcolor("lightgreen", alpha.f = 0.50), ticks)
 PlotData(x, v3s, xmax, yrange, "", "v3 value", "blue", 
          adjustcolor("lightblue", alpha.f = 0.50), ticks)
-PlotData(x, qs, xmax, yrange, "Generation", "q value", "purple", 
+PlotData(x, qs, xmax, yrange, "", "q value", "purple", 
          adjustcolor("mediumpurple1", alpha.f = 0.10), ticks)
-PlotData(x, nes, xmax, yrange, "Generation", "Ne value", "maroon1",
-         adjustcolor("mistyrose", alpha.f = 0.50), ticks)
 PlotData(x, v5s, xmax, yrange, "Generation", "v5 value", "orange",
          adjustcolor("navajowhite", alpha.f = 0.50), ticks)
+PlotData(x, nefs, xmax, yrange, "Generation", "Nef value", "maroon1",
+         adjustcolor("mistyrose", alpha.f = 0.50), ticks)
+PlotData(x, ness, xmax, yrange, "Generation", "Nes value", "green", 
+        adjustcolor("lightgreen", alpha.f = 0.50), ticks)
 box()
 

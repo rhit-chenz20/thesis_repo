@@ -2,7 +2,7 @@
 initialize() {
 	//make the directory as a argument
 	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM");
-//setwd("~/thesis_repo/IBM_SLiM/csv_result");
+	//setwd("~/thesis_repo/IBM_SLiM/csv_result");
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
 	defineConstant("pop_size", 500);
@@ -37,25 +37,14 @@ initialize() {
 		defineConstant("jump_trait", "signal");
 	if(!exists("jump_start_gen"))
 		defineConstant("jump_start_gen", 9000);
-	if(!exists("suffix"))
-		defineConstant("suffix", "csv_result/test_run/");
-	defineConstant("v1_f", suffix+"v1s.csv");
-	defineConstant("v2_f", suffix+"v2s.csv");
-	defineConstant("v3_f", suffix+"v3s.csv");
-	defineConstant("q_f", suffix+"qs.csv");
-	defineConstant("v4_f", suffix+"v4s.csv");
-	defineConstant("v5_f", suffix+"v5s.csv");
-	// family size Ne
-	defineConstant("nef_f", suffix+"nefs.csv");
-	// sex ratio Ne
-	defineConstant("nes_f", suffix+"ness.csv");
+	if(!exists("filename"))
+		defineConstant("filename", "csv_result/test_run/test.csv");
 	defineConstant("plot_script", "plot.R");
-	cat("filename suffix "+suffix+"\n");
-
-	// terminate the program if the output filepath isn't valid
-	test_file = suffix+"_text.csv";
-	writeFile(test_file, "test");
-	deleteFile(test_file);
+	cat("filename: "+filename+"\n");
+	
+	// write file header
+	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", sep=", ");
+	writeFile(filename, var_names);
 	initializeMutationRate(1e-7);
 	
 	// m1: v1
@@ -102,13 +91,13 @@ initialize() {
 	
 	i=0;
 	for (g in g_order)
-	{	
+	{
 		initializeGenomicElement(g1, pos, pos + W-1);
 		pos = pos + W;
 		
 		if (s_i==i){
 			s=c(pos, pos+QTL_length);
-		}		
+		}
 		
 		initializeGenomicElement(g, pos, pos+QTL_length);
 		q = c(q, pos+QTL_length);
@@ -290,6 +279,7 @@ s2 2999 early()
 	sim.setValue("v5s", NULL);
 	sim.setValue("Ness", NULL);
 	sim.setValue("Nefs", NULL);
+	sim.setValue("gens", NULL);
 }
 
 
@@ -324,7 +314,7 @@ s4 3000 late()
 	sim.setValue("qs", c(sim.getValue("qs"), mean(q)));
 	sim.setValue("v4s", c(sim.getValue("v4s"), mean(v4)));
 	sim.setValue("v5s", c(sim.getValue("v5s"), mean(v5)));
-
+	sim.setValue("gens", c(sim.getValue("gens"), sim.cycle));
 }
 
 s7 15000 late()
@@ -351,16 +341,14 @@ s7 15000 late()
 	v5s = sim.getValue("v5s");
 	nefs = sim.getValue("Nefs");
 	ness = sim.getValue("Ness");
+	gens = sim.getValue("gens");
 	
-	success = writeFile(v1_f, paste(v1s, sep="\n"));
-	success = writeFile(v2_f, paste(v2s, sep="\n"));
-	success = writeFile(v3_f, paste(v3s, sep="\n"));
-	success = writeFile(q_f, paste(qs, sep="\n"));
-	success = writeFile(v4_f, paste(v4s, sep="\n"));
-	success = writeFile(v5_f, paste(v5s, sep="\n"));
-	success = writeFile(nef_f, paste(nefs, sep="\n"));
-	success = writeFile(nes_f, paste(ness, sep="\n"));
-	
+	for (i in 0:(length(gens)-1))
+	{
+		if(!writeFile(filename, paste(paste(gens[i],v1s[i],v2s[i],v3s[i],qs[i],v4s[i],v5s[i],nefs[i],ness[i], sep=","), sep="\n"), append=T)){
+			stop("Error writing file.");
+		}
+	}
 	sim.simulationFinished();
 }
 

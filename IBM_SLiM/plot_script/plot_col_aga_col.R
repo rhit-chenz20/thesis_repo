@@ -2,8 +2,9 @@ library(psych)
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
 
-pdf(paste0("../plots/", args[1], ".pdf"))
+fn <- args[1]
 args <- args[-1]
+pdf(paste0("plots/", fn, "_all.pdf"))
 
 v1s <- c()
 v2s <- c()
@@ -47,7 +48,7 @@ if(length(args) == 0){
 }else{
   i <- 1
   for(suffix in args){
-    suffix <- paste("../csv_result/",suffix, sep="")
+    # suffix <- paste("csv_result/",suffix, sep="")
     if(length(v1s) == 0){
       v1s <- read.csv(paste(suffix,"v1s.csv", sep = ""), header = FALSE)
       v2s <- read.csv(paste(suffix,"v2s.csv", sep = ""), header = FALSE)
@@ -76,6 +77,21 @@ colnames(means) <- c("v1", "v2", "v3", "q", "v4", "v5", "nef", "nes")
 # colnames(means) <- c("v3", "q", "v5", "nef", "nes")
 
 pairs(means, panel=panel.smooth)
+# box()
 
-box()
+pdf(paste0("plots/", fn, "_used_var.pdf"))
+
+means <- cbind(
+  # rowMeans(v1s),
+  # rowMeans(v2s),
+  rowMeans(v3s), 
+  rowMeans(qs), 
+  # rowMeans(v4s),
+  rowMeans(v5s), 
+  rowMeans(nefs) 
+  ,rowMeans(ness)
+)
+colnames(means) <- c("v3", "q", "v5", "nef", "nes")
+pairs(means, panel=panel.smooth)
+# box()
 

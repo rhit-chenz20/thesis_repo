@@ -1,24 +1,12 @@
 #!/bin/bash
 declare c=0
-declare max=40
-
-# basic
-for i in {1..100}
-do
-   let "c+=1"
-   slim -d "suffix='csv_result/data_set/basic_${i}_'" model.slim &
-   if ((c>$max))
-   then
-      wait
-      let "c=0"
-   fi
-done
+declare max=60
 
 # jump-signal
 for i in {1..100}
 do
    let "c+=1"
-   slim -d "suffix='csv_result/data_set/jump_signal_${i}_'" -d "jump_enabled=1" model.slim &
+   slim -d "filename='csv_result/data_set/jump_signal_${i}.csv'" -d "jump_enabled=1" model.slim &
    if ((c>$max))
    then
       wait
@@ -30,7 +18,7 @@ done
 for i in {1..100}
 do
    let "c+=1"
-   slim -d "suffix='csv_result/data_set/jump_choosiness_${i}_'" -d "jump_enabled=1" -d "jump_trait='choosiness'" model.slim &
+   slim -d "filename='csv_result/data_set/jump_choosiness_${i}.csv'" -d "jump_enabled=1" -d "jump_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
@@ -42,7 +30,7 @@ done
 for i in {1..100}
 do
    let "c+=1"
-   slim -d "suffix='csv_result/data_set/stop_signal_${i}_'" -d "stop_enabled=1" model.slim &
+   slim -d "filename='csv_result/data_set/stop_signal_${i}.csv'" -d "stop_enabled=1" model.slim &
    if ((c>$max))
    then
       wait
@@ -54,7 +42,7 @@ done
 for i in {1..100}
 do
    let "c+=1"
-   slim -d "suffix='csv_result/data_set/stop_choosiness_${i}_'" -d "stop_enabled=1" -d "stop_trait='choosiness'" model.slim &
+   slim -d "filename='csv_result/data_set/stop_choosiness_${i}.csv'" -d "stop_enabled=1" -d "stop_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
@@ -62,4 +50,14 @@ do
    fi
 done
 
-# Rscript csv_result/plot.R csv_result/*_ 
+# basic
+for i in {1..100}
+do
+   let "c+=1"
+   slim -d "filename='csv_result/data_set/basic_${i}.csv'" model.slim &
+   if ((c>$max))
+   then
+      wait
+      let "c=0"
+   fi
+done
