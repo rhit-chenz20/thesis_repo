@@ -20,9 +20,9 @@ initialize() {
 	defineConstant("v6_sd", 1.0);
 	defineConstant("QTL_length", 500);
 	if(!exists("startGen"))
-		defineConstant("startGen", 3);
+		defineConstant("startGen", 3000);
 	if(!exists("stopGen"))
-		defineConstant("stopGen", 5);
+		defineConstant("stopGen", 15000);
 	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
 	if(!exists("stop_enabled"))
 		defineConstant("stop_enabled", 0);
