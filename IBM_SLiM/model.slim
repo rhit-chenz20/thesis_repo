@@ -1,8 +1,8 @@
 // **************************** Model Initialization *************************************
 initialize() {
 	//make the directory as a argument
-	//setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM");
-	setwd("~/thesis_repo/IBM_SLiM");
+	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/IBM_SLiM");
+	//	setwd("~/thesis_repo/IBM_SLiM");
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
 	defineConstant("pop_size", 500);
@@ -20,9 +20,9 @@ initialize() {
 	defineConstant("v6_sd", 1.0);
 	defineConstant("QTL_length", 500);
 	if(!exists("startGen"))
-		defineConstant("startGen", 3000);
+		defineConstant("startGen", 3);
 	if(!exists("stopGen"))
-		defineConstant("stopGen", 15000);
+		defineConstant("stopGen", 5);
 	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
 	if(!exists("stop_enabled"))
 		defineConstant("stop_enabled", 0);
@@ -179,10 +179,11 @@ function (float)calculate_Signal_Intensity(o<Individual>$ ind)
 {
 	if(ind.sex == "M"){
 		// get the coeficient stored in the male's genome and quality
-		v1 = ind.sumOfMutationsOfType(m1) ;
-		v2 = ind.sumOfMutationsOfType(m2);
-		v3 = ind.sumOfMutationsOfType(m3);
-		q = ind.sumOfMutationsOfType(m4);
+		v1 = ind.sumOfMutationsOfType(m1)+sim.getValue("base_vals").getValue("v1");
+		v2 = ind.sumOfMutationsOfType(m2)+sim.getValue("base_vals").getValue("v2");
+		v3 = ind.sumOfMutationsOfType(m3)+sim.getValue("base_vals").getValue("v3");
+		q = ind.sumOfMutationsOfType(m4)+sim.getValue("base_vals").getValue("q");
+		
 		signal = -1.0;
 		
 		if(MStrategy == 0)
@@ -210,8 +211,8 @@ function (float)calculate_female_response(o<Individual>$ ind, float$ signal)
 {
 	if(ind.sex == "F"){
 		// get the coeficient stored in the male's genome and quality
-		v4 = ind.sumOfMutationsOfType(m5);
-		v5 = ind.sumOfMutationsOfType(m6);
+		v4 = ind.sumOfMutationsOfType(m5)+sim.getValue("base_vals").getValue("v4");
+		v5 = ind.sumOfMutationsOfType(m6)+sim.getValue("base_vals").getValue("v5");
 		response = -1.0;
 		
 		if(FStrategy == 0)
@@ -280,10 +281,33 @@ s2 2999 early()
 	sim.setValue("Ness", NULL);
 	sim.setValue("Nefs", NULL);
 	sim.setValue("gens", NULL);
+	base_vals = Dictionary("v1", 0.0, "v2", 0.0, "v3", 0.0, "q", 0.0, "v4", 0.0, "v5", 0.0);
+	if(sim.substitutions.size()>0){
+		sub = sim.substitutions;
+		base_vals.setValue("v1", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5", sum(sub[sub.mutationType == m6].selectionCoeff));
+	}
+	sim.setValue("base_vals", base_vals);
 }
 
 
 s3 3000 early() {
+	base_vals = sim.getValue("base_vals");
+	if(sim.substitutions.size()>0){
+		sub = sim.substitutions;
+		base_vals.setValue("v1", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5", sum(sub[sub.mutationType == m6].selectionCoeff));
+	}
+	sim.setValue("base_vals", base_vals);
+	
 	for (ind in p1.individuals)
 	{
 		signal = calculate_Signal_Intensity(ind);
