@@ -3,19 +3,18 @@ print(args)
 
 fn <- args[1]
 args <- args[-1]
-pdf(paste0("plots/", fn, ".pdf"))
 
-v1s <- c()
-v2s <- c()
-v3s <- c()
-qs <- c()
-v4s <- c()
-v5s <- c()
-ness <- c()
-nefs <- c()
+df <- data.frame()
 
-PlotMean <- function(x, meanMat, xmax, yrange, xlabel, ylabel, col, xaxp){
-  plot(x=x, y=meanMat, xlim=c(0,xmax), 
+if(length(args) == 0){
+  df <- read.csv("csv_result/test_run/test.csv")
+}else{
+  for(filename in args){
+    df <- rbind(df, read.csv(filename))
+  }
+}
+PlotMean <- function(x, meanMat, xrange, yrange, xlabel, ylabel, col, xaxp){
+  plot(x=x, y=meanMat, xlim=xrange, 
        # ylim = yrange, 
        type="l",xlab=xlabel, ylab=ylabel, cex.axis=0.95, cex.lab=1.2,
        mgp=c(2.5, 0.7, 0), col=col, lwd=2, xaxp=xaxp)
@@ -35,40 +34,49 @@ PlotData <- function(x, df, xmax, yrange, xlabel, ylabel, col_mean, col_sd, xaxp
   PlotSD(x, mean+sd, mean-sd, col_sd)
 }
 
-if(length(args) == 0){
-  v1s <- read.csv("v1s.csv", header = FALSE)
-  v2s <- read.csv("v2s.csv", header = FALSE)
-  v3s <- read.csv("v3s.csv", header = FALSE)
-  qs <- read.csv("qs.csv", header = FALSE)
-  v4s <- read.csv("v4s.csv", header = FALSE)
-  v5s <- read.csv("v5s.csv", header = FALSE)
-  ness <- read.csv("ness.csv", header = FALSE)
-  nefs <- read.csv("nefs.csv", header = FALSE)
-}else{
-  i <- 1
-  for(suffix in args){
-    # suffix <- paste("../csv_result/",suffix, sep="")
-    if(length(v1s) == 0){
-      v1s <- read.csv(paste(suffix,"v1s.csv", sep = ""), header = FALSE)
-      v2s <- read.csv(paste(suffix,"v2s.csv", sep = ""), header = FALSE)
-      v3s <- read.csv(paste(suffix,"v3s.csv", sep = ""), header = FALSE)
-      qs <- read.csv(paste(suffix,"qs.csv", sep = ""), header = FALSE)
-      v4s <- read.csv(paste(suffix,"v4s.csv", sep = ""), header = FALSE)
-      v5s <- read.csv(paste(suffix,"v5s.csv", sep = ""), header = FALSE)
-      ness <- read.csv(paste(suffix,"ness.csv", sep = ""), header = FALSE)
-      nefs <- read.csv(paste(suffix,"nefs.csv", sep = ""), header = FALSE)
-    }
-    i<-i+1
-  }
-}
+pdf(paste0("plots/", fn, ".pdf"))
 
-x <- (1:length(v1s$V1)) * 5
-# x_no_gap <- (1: length(nes$V1))
-# ymax <- max(v1s, v2s, v3s, qs, v4s, v5s)
 yrange <- c(-0.007, 0.021)
-par(mfrow=c(2,3), mar=c(4.0, 4.0, 1.5, 1.5))
-xmax<- 12000
-ticks<-c(0, 12000, 4)
+par(mfrow=c(2,2), mar=c(4.0, 4.0, 1.5, 1.5))
+xrange <- c(3000, 15000)
+ticks<-c(3000, 15000, 4)
+
+df_mean <- aggregate(. ~ generation, data = df, FUN = mean)
+df_sd <- aggregate(. ~ generation, data = df, FUN = sd)
+
+plot(x=df_mean$generation, y=df_mean$v3, xlim=xrange, 
+     # ylim = yrange, 
+     type="l",xlab="generation", ylab="v3", cex.axis=0.95, cex.lab=1.2,
+     mgp=c(2.5, 0.7, 0), col="blue", lwd=2, xaxp=ticks)
+
+polygon(x=c(df_mean$generation, rev(df_mean$generation)), y=c(df_mean$v3 + df_sd$v3, rev(df_mean$v3 - df_sd$v3)), col=adjustcolor("lightblue", alpha.f = 0.50), border = NA)
+
+
+plot(x=df_mean$generation, y=df_mean$q, xlim=xrange, 
+     # ylim = yrange, 
+     type="l",xlab="generation", ylab="q", cex.axis=0.95, cex.lab=1.2,
+     mgp=c(2.5, 0.7, 0), col="purple", lwd=2, xaxp=ticks)
+polygon(x=c(df_mean$generation, rev(df_mean$generation)), y=c(df_mean$q + df_sd$q, rev(df_mean$q - df_sd$q)), col=adjustcolor("mediumpurple1", alpha.f = 0.10), border = NA)
+
+
+plot(x=df_mean$generation, y=df_mean$v5, xlim=xrange, 
+     # ylim = yrange, 
+     type="l",xlab="generation", ylab="v5", cex.axis=0.95, cex.lab=1.2,
+     mgp=c(2.5, 0.7, 0), col="orange", lwd=2, xaxp=ticks)
+polygon(x=c(df_mean$generation, rev(df_mean$generation)), y=c(df_mean$v5 + df_sd$v5, rev(df_mean$v5 - df_sd$v5)), col=adjustcolor("navajowhite", alpha.f = 0.50), border = NA)
+
+
+plot(x=df_mean$generation, y=df_mean$nef, xlim=xrange, 
+     # ylim = yrange, 
+     type="l",xlab="generation", ylab="nef", cex.axis=0.95, cex.lab=1.2,
+     mgp=c(2.5, 0.7, 0), col="maroon1", lwd=2, xaxp=ticks)
+
+polygon(x=c(df_mean$generation, rev(df_mean$generation)), y=c(df_mean$nef + df_sd$nef, rev(df_mean$nef - df_sd$nef)), col=adjustcolor("mistyrose", alpha.f = 0.50), border = NA)
+
+
+
+
+
 
 
 
@@ -76,15 +84,16 @@ ticks<-c(0, 12000, 4)
 #          adjustcolor("salmon", alpha.f = 0.20),ticks)
 # PlotData(x, v2s, xmax, yrange, "", "v2 value", "green", 
 #          adjustcolor("lightgreen", alpha.f = 0.50), ticks)
-PlotData(x, v3s, xmax, yrange, "", "v3 value", "blue", 
-         adjustcolor("lightblue", alpha.f = 0.50), ticks)
-PlotData(x, qs, xmax, yrange, "", "q value", "purple", 
-         adjustcolor("mediumpurple1", alpha.f = 0.10), ticks)
-PlotData(x, v5s, xmax, yrange, "Generation", "v5 value", "orange",
-         adjustcolor("navajowhite", alpha.f = 0.50), ticks)
-PlotData(x, nefs, xmax, yrange, "Generation", "Nef value", "maroon1",
-         adjustcolor("mistyrose", alpha.f = 0.50), ticks)
-PlotData(x, ness, xmax, yrange, "Generation", "Nes value", "green", 
-        adjustcolor("lightgreen", alpha.f = 0.50), ticks)
+# PlotData(df$generation, df$v3, xrange, yrange, "", "v3 value", "blue", 
+#          adjustcolor("lightblue", alpha.f = 0.50), ticks)
+# PlotData(df$generation, df$q, xrange, yrange, "", "q value", "purple", 
+#          adjustcolor("mediumpurple1", alpha.f = 0.10), ticks)
+# PlotData(df$generation, df$v5, xrange, yrange, "Generation", "v5 value", "orange",
+#          adjustcolor("navajowhite", alpha.f = 0.50), ticks)
+# PlotData(df$generation, df$nef, xrange, yrange, "Generation", "Nef value", "maroon1",
+#          adjustcolor("mistyrose", alpha.f = 0.50), ticks)
+# PlotData(df$generation, df$nes, xrange, yrange, "Generation", "Nes value", "green", 
+#         adjustcolor("lightgreen", alpha.f = 0.50), ticks)
 box()
 
+dev.off()

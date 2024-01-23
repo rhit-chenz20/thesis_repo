@@ -1,8 +1,8 @@
 // **************************** Model Initialization *************************************
 initialize() {
 	//make the directory as a argument
-//	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/slim_ibm");
-	setwd("~/thesis_repo/slim_ibm");
+	setwd("/Users/andrea/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Desktop - Andrea’s MacBook Air/thesis_repo/slim_ibm");
+//	setwd("~/thesis_repo/slim_ibm");
 	defineGlobal("MStrategy", 0);
 	defineGlobal("FStrategy", 0);
 	defineConstant("pop_size", 500);
@@ -20,9 +20,9 @@ initialize() {
 	defineConstant("v6_sd", 1.0);
 	defineConstant("QTL_length", 500);
 	if(!exists("startGen"))
-		defineConstant("startGen", 3000);
+		defineConstant("startGen", 4000);
 	if(!exists("stopGen"))
-		defineConstant("stopGen", 3100);
+		defineConstant("stopGen", 20000);
 	// which trait to stop mutating and see the counterpart reaction: signal or choosiness
 	if(!exists("stop_enabled"))
 		defineConstant("stop_enabled", 0);
@@ -43,7 +43,7 @@ initialize() {
 	cat("filename: "+filename+"\n");
 	
 	// write file header
-	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", sep=", ");
+	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "v1_b", "v2_b","v3_b","q_b","v4_b","v5_b", sep=", ");
 	writeFile(filename, var_names);
 	initializeMutationRate(1e-7);
 	
@@ -246,8 +246,10 @@ function (float)M_dishonest_signal(float$ v1, float$ v2, float$ v3, float$ q)
 
 function (float)F_trust_receiver(float$ v4, float$ v5, float$ signal)
 {
-	return v5*signal+1;
-	//	return signal;
+//	return v5*signal+1;
+//	actual amplification
+//	return v5^signal+1;
+	return signal;
 }
 
 function (float)Signal_jump(float$ ori_signal)
@@ -296,8 +298,8 @@ s2 2999 early()
 
 
 s3 3000 early() {
-	base_vals = sim.getValue("base_vals");
 	if(sim.substitutions.size()>0){
+		base_vals = sim.getValue("base_vals");
 		sub = sim.substitutions;
 		base_vals.setValue("v1", sum(sub[sub.mutationType == m1].selectionCoeff));
 		base_vals.setValue("v2", sum(sub[sub.mutationType == m2].selectionCoeff));
@@ -305,8 +307,8 @@ s3 3000 early() {
 		base_vals.setValue("q", sum(sub[sub.mutationType == m4].selectionCoeff));
 		base_vals.setValue("v4", sum(sub[sub.mutationType == m5].selectionCoeff));
 		base_vals.setValue("v5", sum(sub[sub.mutationType == m6].selectionCoeff));
+		sim.setValue("base_vals", base_vals);
 	}
-	sim.setValue("base_vals", base_vals);
 	
 	for (ind in p1.individuals)
 	{
@@ -326,21 +328,16 @@ s4 3000 late()
 {
 	if (sim.cycle % 5 != 0) return;
 	
-	v1 = p1.individuals.sumOfMutationsOfType(m1)+sim.getValue("base_vals").getValue("v1");
-	v2 = p1.individuals.sumOfMutationsOfType(m2)+sim.getValue("base_vals").getValue("v2");
-	v3 = p1.individuals.sumOfMutationsOfType(m3)+sim.getValue("base_vals").getValue("v3");
-	q = p1.individuals.sumOfMutationsOfType(m4)+sim.getValue("base_vals").getValue("q");
-	v4 = p1.individuals.sumOfMutationsOfType(m5)+sim.getValue("base_vals").getValue("v4");
-	v5 = p1.individuals.sumOfMutationsOfType(m6)+sim.getValue("base_vals").getValue("v5");
-//	sim.setValue("v1s", c(sim.getValue("v1s"), mean(v1)));
-//	sim.setValue("v2s", c(sim.getValue("v2s"), mean(v2)));
-//	sim.setValue("v3s", c(sim.getValue("v3s"), mean(v3)));
-//	sim.setValue("qs", c(sim.getValue("qs"), mean(q)));
-//	sim.setValue("v4s", c(sim.getValue("v4s"), mean(v4)));
-//	sim.setValue("v5s", c(sim.getValue("v5s"), mean(v5)));
-
+	base_vals = sim.getValue("base_vals");	
 	
-	if(!writeFile(filename, paste(paste(sim.cycle, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), sep="\n"), append=T)){
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5");
+	
+	if(!writeFile(filename, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
 		stop("Error writing file.");
 	}
 }
@@ -348,12 +345,14 @@ s4 3000 late()
 s7 15000 late()
 {
 	cat("-------coefficients----------\n");
-	v1 = p1.individuals.sumOfMutationsOfType(m1);
-	v2 = p1.individuals.sumOfMutationsOfType(m2);
-	v3 = p1.individuals.sumOfMutationsOfType(m3);
-	q = p1.individuals.sumOfMutationsOfType(m4);
-	v4 = p1.individuals.sumOfMutationsOfType(m5);
-	v5 = p1.individuals.sumOfMutationsOfType(m6);
+	base_vals = sim.getValue("base_vals");	
+	
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5");
 	cat("mean v1 = "+mean(v1)+"\n");
 	cat("mean v2 = "+mean(v2)+"\n");
 	cat("mean v3 = "+mean(v3)+"\n");
@@ -361,22 +360,6 @@ s7 15000 late()
 	cat("mean v4 = "+mean(v4)+"\n");
 	cat("mean v5 = "+mean(v5)+"\n");
 	
-	//	v1s = sim.getValue("v1s");
-	//	v2s = sim.getValue("v2s");
-	//	v3s = sim.getValue("v3s");
-	//	qs = sim.getValue("qs");
-	//	v4s = sim.getValue("v4s");
-	//	v5s = sim.getValue("v5s");
-	//	nefs = sim.getValue("Nefs");
-	//	ness = sim.getValue("Ness");
-	//	gens = sim.getValue("gens");
-	//	
-	//	for (i in 0:(length(gens)-1))
-	//	{
-	//		if(!writeFile(filename, paste(paste(gens[i],v1s[i],v2s[i],v3s[i],qs[i],v4s[i],v5s[i],nefs[i],ness[i], sep=","), sep="\n"), append=T)){
-	//			stop("Error writing file.");
-	//		}
-	//	}
 	sim.simulationFinished();
 }
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 declare c=0
 declare max=10
+declare date='Jan23'
 
 # # jump-signal
 # for i in {1..50}
@@ -50,14 +51,14 @@ declare max=10
 #    fi
 # done
 
-# basic
-for i in {1..10}
-do
-   let "c+=1"
-   slim -d "filename='csv_result/test_run/basic_${i}.csv'" model.slim &
-   if ((c>$max))
-   then
-      wait
-      let "c=0"
-   fi
-done
+# # basic
+# for i in {1..10}
+# do
+#    let "c+=1"
+#    slim -d "filename='csv_result/test_run/basic_${i}.csv'" model.slim &
+#    if ((c>$max))
+#    then
+#       wait
+#       let "c=0"
+#    fi
+# done
