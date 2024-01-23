@@ -12,7 +12,7 @@ mkdir "../../thesis_result/data_set/${date}"
 for i in {1..50}
 do
    let "c+=1"
-   slim -d "filename='../../thesis_result/data_set/${date}/jump_signal_${i}.csv'" -d "jump_enabled=1" model.slim &
+   slim -d "filename='../../thesis_result/data_set/${date}/jump_signal_${i}'" -d "jump_enabled=1" model.slim &
    if ((c>$max))
    then
       wait
@@ -24,7 +24,7 @@ done
 for i in {1..50}
 do
    let "c+=1"
-   slim -d "filename='../../thesis_result/data_set/${date}/jump_choosiness_${i}.csv'" -d "jump_enabled=1" -d "jump_trait='choosiness'" model.slim &
+   slim -d "filename='../../thesis_result/data_set/${date}/jump_choosiness_${i}'" -d "jump_enabled=1" -d "jump_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
@@ -36,7 +36,7 @@ done
 for i in {1..50}
 do
    let "c+=1"
-   slim -d "filename='../../thesis_result/data_set/${date}/stop_signal_${i}.csv'" -d "stop_enabled=1" model.slim &
+   slim -d "filename='../../thesis_result/data_set/${date}/stop_signal_${i}'" -d "stop_enabled=1" model.slim &
    if ((c>$max))
    then
       wait
@@ -48,7 +48,7 @@ done
 for i in {1..50}
 do
    let "c+=1"
-   slim -d "filename='../../thesis_result/data_set/${date}/stop_choosiness_${i}.csv'" -d "stop_enabled=1" -d "stop_trait='choosiness'" model.slim &
+   slim -d "filename='../../thesis_result/data_set/${date}/stop_choosiness_${i}'" -d "stop_enabled=1" -d "stop_trait='choosiness'" model.slim &
    if ((c>$max))
    then
       wait
@@ -60,7 +60,7 @@ done
 for i in {1..50}
 do
    let "c+=1"
-   slim -d "filename='../../thesis_result/data_set/${date}/basic_${i}.csv'" model.slim &
+   slim -d "filename='../../thesis_result/data_set/${date}/basic_${i}'" model.slim &
    if ((c>$max))
    then
       wait

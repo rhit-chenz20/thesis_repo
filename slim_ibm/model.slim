@@ -38,13 +38,15 @@ initialize() {
 	if(!exists("jump_start_gen"))
 		defineConstant("jump_start_gen", 9000);
 	if(!exists("filename"))
-		defineConstant("filename", "csv_result/test_run/test.csv");
+		defineConstant("filename", "csv_result/test_run/test");
 	defineConstant("plot_script", "plot.R");
-	cat("filename: "+filename+"\n");
+	defineConstant("seed", getSeed());
+	defineConstant("fn", paste(filename,"_", seed, ".csv", sep=""));
+	cat("filename: "+fn+"\n");
 	
 	// write file header
 	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "v1_b", "v2_b","v3_b","q_b","v4_b","v5_b", sep=", ");
-	writeFile(filename, var_names);
+	writeFile(fn, var_names);
 	initializeMutationRate(1e-7);
 	
 	// m1: v1
@@ -337,7 +339,7 @@ s4 3000 late()
 	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4");
 	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5");
 	
-	if(!writeFile(filename, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
+	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
 		stop("Error writing file.");
 	}
 }
