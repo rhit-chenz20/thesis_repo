@@ -1,7 +1,7 @@
 #!/bin/bash
 declare c=0
 declare max=40
-declare date='Jan23'
+declare date='Jan28'
 # current folder is slim_ibm
 mkdir "../../thesis_result"
 mkdir "../../thesis_result/data_set"

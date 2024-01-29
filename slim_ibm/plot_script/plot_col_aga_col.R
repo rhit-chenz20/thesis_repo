@@ -1,6 +1,6 @@
 library(psych)
 args <- commandArgs(trailingOnly = TRUE)
-print(args)
+# print(args)
 
 fn <- args[1]
 args <- args[-1]
@@ -14,12 +14,12 @@ if(length(args) == 0){
   }
 }
 
-pdf(paste0("plots/", fn, "_all.pdf"))
+pdf(paste0(fn, "_all.pdf"))
 df_mean <- aggregate(. ~ generation, data = df, FUN = mean)
 pairs(df_mean, panel=panel.smooth)
 dev.off()
 
-pdf(paste0("plots/", fn, "_used_var.pdf"))
+pdf(paste0(fn, "_used_var.pdf"))
 df_var_mean <- aggregate(cbind(v3, q, v5, nef, nes) ~ generation, data = df, FUN = mean)
 pairs(df_var_mean, panel=panel.smooth)
 dev.off()

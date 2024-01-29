@@ -44,8 +44,13 @@ initialize() {
 	defineConstant("fn", paste(filename,"_", seed, ".csv", sep=""));
 	cat("filename: "+fn+"\n");
 	
+	base_vals = Dictionary("v1_b", 0.0, "v2_b", 0.0, "v3_b", 0.0, "q_b", 0.0, "v4_b", 0.0, "v5_b", 0.0);
+	defineGlobal("base_vals", base_vals);
+//	sim.setValue("base_vals", base_vals);
+	
 	// write file header
-	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "v1_b", "v2_b","v3_b","q_b","v4_b","v5_b", sep=", ");
+	var_names = paste("generation","v1", "v2","v3","q","v4","v5", "nef", "nes", "signal", "choosiness", base_vals.serialize("csv")[0], sep=", ");
+	print(var_names);
 	writeFile(fn, var_names);
 	initializeMutationRate(1e-7);
 	
@@ -181,10 +186,10 @@ function (float)calculate_Signal_Intensity(o<Individual>$ ind)
 {
 	if(ind.sex == "M"){
 		// get the coeficient stored in the male's genome and quality
-		v1 = ind.sumOfMutationsOfType(m1)+sim.getValue("base_vals").getValue("v1");
-		v2 = ind.sumOfMutationsOfType(m2)+sim.getValue("base_vals").getValue("v2");
-		v3 = ind.sumOfMutationsOfType(m3)+sim.getValue("base_vals").getValue("v3");
-		q = ind.sumOfMutationsOfType(m4)+sim.getValue("base_vals").getValue("q");
+		v1 = ind.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+		v2 = ind.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+		v3 = ind.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+		q = ind.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
 		
 		signal = -1.0;
 		
@@ -213,8 +218,8 @@ function (float)calculate_female_response(o<Individual>$ ind, float$ signal)
 {
 	if(ind.sex == "F"){
 		// get the coeficient stored in the male's genome and quality
-		v4 = ind.sumOfMutationsOfType(m5)+sim.getValue("base_vals").getValue("v4");
-		v5 = ind.sumOfMutationsOfType(m6)+sim.getValue("base_vals").getValue("v5");
+		v4 = ind.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+		v5 = ind.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
 		response = -1.0;
 		
 		if(FStrategy == 0)
@@ -226,7 +231,6 @@ function (float)calculate_female_response(o<Individual>$ ind, float$ signal)
 		if (jump_enabled == 1 & community.tick >= jump_start_gen & jump_trait == "choosiness"){
 			response = Response_jump(response);
 		}
-		
 		return response;
 	}else{
 		return 0.0;
@@ -250,8 +254,8 @@ function (float)F_trust_receiver(float$ v4, float$ v5, float$ signal)
 {
 //	return v5*signal+1;
 //	actual amplification
-//	return v5^signal+1;
-	return signal;
+	return v5^signal+1;
+//	return signal;
 }
 
 function (float)Signal_jump(float$ ori_signal)
@@ -285,31 +289,28 @@ s2 2999 early()
 	sim.setValue("Ness", NULL);
 	sim.setValue("Nefs", NULL);
 	sim.setValue("gens", NULL);
-	base_vals = Dictionary("v1", 0.0, "v2", 0.0, "v3", 0.0, "q", 0.0, "v4", 0.0, "v5", 0.0);
 	if(sim.substitutions.size()>0){
 		sub = sim.substitutions;
-		base_vals.setValue("v1", sum(sub[sub.mutationType == m1].selectionCoeff));
-		base_vals.setValue("v2", sum(sub[sub.mutationType == m2].selectionCoeff));
-		base_vals.setValue("v3", sum(sub[sub.mutationType == m3].selectionCoeff));
-		base_vals.setValue("q", sum(sub[sub.mutationType == m4].selectionCoeff));
-		base_vals.setValue("v4", sum(sub[sub.mutationType == m5].selectionCoeff));
-		base_vals.setValue("v5", sum(sub[sub.mutationType == m6].selectionCoeff));
+		base_vals.setValue("v1_b", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2_b", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3_b", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q_b", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4_b", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5_b", sum(sub[sub.mutationType == m6].selectionCoeff));
 	}
-	sim.setValue("base_vals", base_vals);
 }
 
 
 s3 3000 early() {
+	sim.setValue("choosiness", c());
 	if(sim.substitutions.size()>0){
-		base_vals = sim.getValue("base_vals");
 		sub = sim.substitutions;
-		base_vals.setValue("v1", sum(sub[sub.mutationType == m1].selectionCoeff));
-		base_vals.setValue("v2", sum(sub[sub.mutationType == m2].selectionCoeff));
-		base_vals.setValue("v3", sum(sub[sub.mutationType == m3].selectionCoeff));
-		base_vals.setValue("q", sum(sub[sub.mutationType == m4].selectionCoeff));
-		base_vals.setValue("v4", sum(sub[sub.mutationType == m5].selectionCoeff));
-		base_vals.setValue("v5", sum(sub[sub.mutationType == m6].selectionCoeff));
-		sim.setValue("base_vals", base_vals);
+		base_vals.setValue("v1_b", sum(sub[sub.mutationType == m1].selectionCoeff));
+		base_vals.setValue("v2_b", sum(sub[sub.mutationType == m2].selectionCoeff));
+		base_vals.setValue("v3_b", sum(sub[sub.mutationType == m3].selectionCoeff));
+		base_vals.setValue("q_b", sum(sub[sub.mutationType == m4].selectionCoeff));
+		base_vals.setValue("v4_b", sum(sub[sub.mutationType == m5].selectionCoeff));
+		base_vals.setValue("v5_b", sum(sub[sub.mutationType == m6].selectionCoeff));
 	}
 	
 	for (ind in p1.individuals)
@@ -330,16 +331,16 @@ s4 3000 late()
 {
 	if (sim.cycle % 5 != 0) return;
 	
-	base_vals = sim.getValue("base_vals");	
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
+	signal = sim.getValue("signal");
+	choosinesses = mean(sim.getValue("choosiness"));
 	
-	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1");
-	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2");
-	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3");
-	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q");
-	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4");
-	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5");
-	
-	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
+	if(!writeFile(fn, paste(paste(paste(sim.cycle-startGen, mean(v1), mean(v2), mean(v3), mean(q), mean(v4), mean(v5), sim.getValue("Nefs"),sim.getValue("Ness"), signal, choosinesses, sep=","), base_vals.serialize(format="csv")[1], sep=","), sep="\n"), append=T)){
 		stop("Error writing file.");
 	}
 }
@@ -349,12 +350,12 @@ s7 15000 late()
 	cat("-------coefficients----------\n");
 	base_vals = sim.getValue("base_vals");	
 	
-	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1");
-	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2");
-	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3");
-	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q");
-	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4");
-	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5");
+	v1 = p1.individuals.sumOfMutationsOfType(m1)+base_vals.getValue("v1_b");
+	v2 = p1.individuals.sumOfMutationsOfType(m2)+base_vals.getValue("v2_b");
+	v3 = p1.individuals.sumOfMutationsOfType(m3)+base_vals.getValue("v3_b");
+	q = p1.individuals.sumOfMutationsOfType(m4)+base_vals.getValue("q_b");
+	v4 = p1.individuals.sumOfMutationsOfType(m5)+base_vals.getValue("v4_b");
+	v5 = p1.individuals.sumOfMutationsOfType(m6)+base_vals.getValue("v5_b");
 	cat("mean v1 = "+mean(v1)+"\n");
 	cat("mean v2 = "+mean(v2)+"\n");
 	cat("mean v3 = "+mean(v3)+"\n");
@@ -406,7 +407,10 @@ s5 3000 modifyChild(p1){
 		nf = FParent;
 		ne_sex_ratio = 4*nm*nf/(nf+nm);
 		sim.setValue("Ness", ne_sex_ratio);
+		
+		sim.setValue("signal", mean(p1.individuals.tagF));
 	}
+	
 	
 	return T;
 }
